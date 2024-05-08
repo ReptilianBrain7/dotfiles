@@ -1,0 +1,41 @@
+/*
+Arc-Dark Color Scheme
+*/
+
+*{
+    font-family: JetBrains Mono;
+    height: fit-content;
+}
+
+#window {
+    border: 2px solid #85f776;
+    border-radius: 18px;
+    background-color: rgb(0, 0, 0);
+    color: #9af79a;
+    padding: 5px;
+}
+
+#inner-box {
+    background-color: rgb(0, 0, 0);
+    /* background-color: rgba(0,0,0,0.8); */
+}
+
+#outer-box {
+    margin: 5px;
+    padding:5px 10px;
+    margin-top: -28px;
+}
+
+#text {
+    padding: 5px;
+    /* color: white; */
+}
+
+#entry:nth-child(even) {
+    /* background-color: pink; */
+}
+
+#entry:selected {
+color: black;
+    background-color: #003a1d;
+}

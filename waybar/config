@@ -1,0 +1,202 @@
+// Global
+{
+  "layer": "top",
+  "position": "top",
+  "margin": 5,
+
+  // If height property would be not present, it'd be calculated dynamically
+  "height": 30,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+
+  "modules-center": ["clock"],
+
+  "modules-right": [
+	"privacy",
+    "tray",
+    "memory",
+    "cpu",
+    // Q"backlight#icon",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "battery",
+    "custom/power"
+  ],
+
+  // Modules
+
+  "hyprland/mode": {
+    "format": "{}",
+    "tooltip": false
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 120
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "disable-markup": false,
+    "all-outputs": true,
+    "format": "  {icon}  "
+    //"format":"{icon}",
+    //"format-icons": {
+    //    "1": "",
+    //    "2": "",
+    //    "3": "󰙯",
+    //    "4": "",
+    //    "5": "󰡨",
+    //    "6": "",
+    //}
+  },
+
+  "clock": {
+    "interval": 10,
+    // "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
+    "format": "{:%e %b %Y %H:%M} ",
+    "tooltip-format": "{:%e %B %Y}"
+  },
+
+  "privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	]
+},
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "  {}%", // Icon: memory
+    "on-click": "kitty -e 'btm'",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "  {usage}% ({load})", // Icon: microchip
+    "states": {
+      "warning": 70,
+      "critical": 90
+    },
+    "on-click": "kitty -e 'btm'"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [""],
+    "on-scroll-down": "brightnessctl -c backlight set 5%-",
+    "on-scroll-up": "brightnessctl -c backlight set +5%"
+  },
+
+  "backlight#value": {
+    "format": "{percent}%"
+    // "on-scroll-down": "brightnessctl -c backlight set 5%-",
+    // "on-scroll-up": "brightnessctl -c backlight set +5%"
+  },
+  
+  "pulseaudio": {
+    "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "וֹ",
+      "headset": "  ",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+  },
+
+  "network": {
+	"interval": 5,
+	"format-wifi": " {essid}", // Icon: wifi
+	"format-ethernet": " {ipaddr}/{cidr}", // Icon: ethernet
+	"format-disconnected": "⚠  Disconnected",
+	"tooltip-format": "{ifname} via {gwaddr}: {ipaddr}\n\n{bandwidthDownBytes} - {bandwidthUpBytes}",
+	// "on-click": "kitty -e 'nmtui'"
+  },
+  "network#vpn": {
+	"interface": "tun0",
+	"format": "",
+	"format-disconnected": "⚠  Disconnected",
+	"tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{capacity}% {icon} ",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% ",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  // to use the weather module replace <your_location> with your city or town
+  // note: do not use spaces: new york would be newyork
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh tampa",
+    "return-type": "json",
+    "interval": 600
+  },
+
+  "custom/firefox": {
+    "format": " ",
+    "on-click": "exec firefox",
+    "tooltip": false
+  },
+
+  "custom/terminal": {
+    "format": " ",
+    "on-click": "exec kitty",
+    "tooltip": false
+  },
+
+  "custom/files": {
+    "format": " ",
+    "on-click": "exec nautilus",
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+    "tooltip": false
+  }
+}
