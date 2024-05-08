@@ -1,18 +1,22 @@
 # dotfiles
 
 - **OS**: Arch Linux
-- **WM**: i3
+- **WM**: Hyprland
 - **File Manager**: thunar
 - **Browser**: firefox
 - **Terminal**: kitty
 - **Shell**: oh-my-zsh (dotfiles will come soon...)
 - **Editor**: nvim
-- **Status Bar**: polybar
-- **Launcher**: rofi
+- **Status Bar**: waybar
+- **Launcher**: wofi
+- **PDF Viewer**: zathura
+- **Theme**: Arc-Dark [GTK3]
 - **Font**: JetBrains Mono Font
 
-(Pictures will come soon...)
+<img src="./background_with_apps.png" alt=img width=900px>
 
-(Wallpaper will come soon...)
+<img src="./background.png" alt=img width=900px>
 
-(My promises will come hopefully sooner... )
+# Wallpaper:
+
+<img src="./sumeru_awakening.jpg">
