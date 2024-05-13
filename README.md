@@ -5,7 +5,7 @@
 - **File Manager**: thunar
 - **Browser**: firefox
 - **Terminal**: kitty
-- **Shell**: oh-my-zsh (dotfiles will come soon...)
+- **Shell**: oh-my-zsh
 - **Editor**: nvim
 - **Status Bar**: waybar
 - **Launcher**: wofi
