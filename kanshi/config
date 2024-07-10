@@ -1,8 +1,0 @@
-profile Notebook {
-    output eDP-1 mode 2560x1440@165.00Hz position 0,0 enable
-}
-
-profile Monitor {
-    output eDP-1 disable
-    output "Philips Consumer Electronics Company PHL 275E2F UHB2049001552" 2560x1440@74.97Hz position 0,0
-}
